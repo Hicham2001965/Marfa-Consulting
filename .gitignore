@@ -1,0 +1,236 @@
+# ============================================
+# MARFA CONSULTING - Git Ignore File
+# ============================================
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+.project
+.classpath
+*.c9/
+*.sublime-workspace
+.env.local
+.env.*.local
+
+# Node & Package Management
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build & Distribution
+dist/
+build/
+.next/
+out/
+.nuxt/
+.cache/
+.vuepress/dist/
+.serverless/
+.fusebox/
+.dynamodb/
+.tern-port
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Testing
+coverage/
+.nyc_output/
+.jest/
+.mocha/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# OS Generated Files
+.AppleDouble
+.LSOverride
+.TemporaryItems
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.nfs*
+
+# Backup Files
+*.backup
+*.bkp
+*.old
+
+# Compiled Files
+*.class
+*.jar
+*.exe
+*.o
+*.so
+
+# Database Files
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuration Files (Sensitive)
+config.local.js
+secrets.json
+credentials.json
+
+# IDE Specific
+.vscode/settings.json
+.vscode/extensions.json
+.idea/workspace.xml
+.idea/tasks.xml
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+
+# Project Specific
+.cache/
+.temp/
+.tmp/
+debug.log
+error.log
+
+# Dependency Directories
+node_modules/
+bower_components/
+vendor/
+
+# Optional npm Cache
+.npm
+
+# Optional REPL History
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# dotenv Environment Variables File
+.env
+
+# Mac Files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Misc
+*.orig
+*.rej
+*.patch
+
+# Compiled Python Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+.eslintcache
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary
+.tmp/
+temp/
+
+# Backup
+*.bak
+*.backup
+*.old

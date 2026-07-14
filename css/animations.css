@@ -1,0 +1,370 @@
+/* ============================================
+   MARFA CONSULTING - ANIMATIONS & EFFECTS
+   ============================================ */
+
+/* Compass Rotation Animation */
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.compass {
+  animation: spin 140s linear infinite;
+}
+
+/* Pulse Animation for Scroll Cue */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.scroll-cue .line {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Button Hover Animation */
+@keyframes buttonHover {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Glow Effect */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(169, 130, 76, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(169, 130, 76, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(169, 130, 76, 0);
+  }
+}
+
+/* Shimmer Effect for Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* Underline Animation */
+@keyframes underlineExpand {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Stagger Animation for List Items */
+.reveal:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.reveal:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.reveal:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.reveal:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.reveal:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+/* Interactive Elements Animation */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Form Input Animation */
+.field input:focus,
+.field textarea:focus {
+  animation: scaleIn 0.3s ease;
+}
+
+/* Card Hover Animation */
+.case-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Row Animation */
+.service-row {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.service-row:hover {
+  background-color: rgba(169, 130, 76, 0.05);
+  transform: translateX(-5px);
+}
+
+/* Timeline Step Animation */
+.tl-step {
+  transition: transform 0.3s ease;
+}
+
+.tl-step:hover {
+  transform: translateY(-5px);
+}
+
+/* Stat Number Animation */
+.stat .num {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.stat:hover .num {
+  color: var(--gold);
+  transform: scale(1.05);
+}
+
+/* FAQ Item Animation */
+.faq-item[open] summary {
+  color: var(--gold);
+}
+
+.faq-item .a {
+  animation: slideUp 0.3s ease;
+}
+
+/* Header Scroll Animation */
+header {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Mobile Menu Animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-desktop[style*="display:flex"] {
+  animation: slideDown 0.3s ease;
+}
+
+/* Loading Spinner */
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  animation: spinner 1s linear infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover Effects for Links */
+a {
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Smooth Transitions for All Elements */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Disable transitions for specific elements */
+.compass,
+.scroll-cue .line {
+  transition: none;
+}
+
+/* Parallax Effect for Hero */
+@media (prefers-reduced-motion: no-preference) {
+  .hero {
+    background-attachment: fixed;
+  }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .compass {
+    animation: none;
+  }
+
+  .scroll-cue .line {
+    animation: none;
+  }
+}
