@@ -1,0 +1,33 @@
+# Marfa Consulting - Robots.txt
+# This file tells search engines how to crawl and index the website
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Specific crawl delays
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://hicham2001965.github.io/Marfa-Consulting/sitemap.xml
+
+# Allow specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
