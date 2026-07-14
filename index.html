@@ -42,7 +42,7 @@
 </header>
 
 <!-- HERO SECTION -->
-<section class="hero" role="main" aria-label="القسم الرئيسي">
+<section class="hero" role="main" aria-label="القسم الرئيسي" style="background: linear-gradient(135deg, rgba(20, 31, 41, 0.85) 0%, rgba(14, 22, 32, 0.85) 100%), url('images/hero-bg.jpg') center/cover no-repeat; background-attachment: fixed;">
   <div class="compass" aria-hidden="true">
     <svg viewBox="0 0 400 400" fill="none" role="img" aria-label="خلفية زخرفية">
       <circle cx="200" cy="200" r="199" stroke="#A9824C" stroke-opacity="0.25"/>
@@ -210,12 +210,12 @@
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
-<section class="about" id="about" aria-label="عن المؤسس">
+<!-- BOOKING SECTION -->
+<section class="book" id="book" aria-label="حجز جلسة" style="background: linear-gradient(135deg, #F6F2EA 0%, #EFE9DD 100%), url('images/strategy-session.jpg') right/50% no-repeat; background-attachment: fixed;">
   <div class="wrap">
     <div class="about-grid">
-      <div class="about-card reveal">
-        <span class="initials">ي . ب</span>
+      <div class="about-card reveal" style="background: linear-gradient(135deg, #A9824C 0%, #C9A768 100%), url('images/consulting-meeting.jpg') center/cover; min-height: 400px; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+        <span class="initials" style="display: none;">ي . ب</span>
       </div>
       <div class="reveal">
         <div class="label"><span class="rule"></span>عن المؤسس</div>
@@ -288,7 +288,7 @@
 
       <div class="form-submit">
         <button type="submit" class="btn btn-outline" id="submit-btn">إرسال الطلب</button>
-        <span class="form-note">سيُفتح تطبيق بريدك تلقائيًا لإتمام الإرسال — لن نشارك بياناتك مع أي طرف ثالث.</span>
+        <span class="form-note" id="form-note">سيُفتح تطبيق بريدك تلقائيًا لإتمام الإرسال — لن نشارك بياناتك مع أي طرف ثالث.</span>
       </div>
       <div class="form-status" id="form-status"></div>
     </form>

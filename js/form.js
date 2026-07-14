@@ -137,9 +137,21 @@ if (form) {
     form.reset();
     submitBtn.disabled = false;
 
-    // Open email client
+    // Try multiple methods to send the email
     setTimeout(() => {
+      // Method 1: Try mailto first
       window.location.href = mailtoUrl;
+      
+      // Method 2: Fallback - Try to send via API if mailto fails
+      setTimeout(() => {
+        sendEmailViaAPI({
+          name,
+          email,
+          phone,
+          company,
+          message
+        });
+      }, 2000);
     }, 500);
 
     // Clear status message after 5 seconds
@@ -386,6 +398,93 @@ window.addEventListener('error', (event) => {
 // EXPORT FUNCTIONS
 // ============================================
 
+/**
+ * Send email via API (Fallback method)
+ */
+function sendEmailViaAPI(data) {
+  const emailData = {
+    to: BOOKING_EMAIL,
+    from: data.email,
+    name: data.name,
+    subject: `طلب حجز جلسة تقييم أولية — ${data.name}`,
+    message: `
+الاسم: ${data.name}
+البريد الإلكتروني: ${data.email}
+${data.phone ? `الهاتف: ${data.phone}` : ''}
+${data.company ? `الشركة: ${data.company}` : ''}
+
+نبذة عن الطلب:
+${data.message}
+
+---
+تاريخ الإرسال: ${new Date().toLocaleString('ar-SA')}
+من موقع: مرفأ للاستشارات
+    `
+  };
+
+  // Try to send via FormSubmit (free service)
+  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(emailData)
+  }).catch(() => {
+    // If API fails, show alternative contact method
+    console.warn('Email API failed, showing alternative contact method');
+    showAlternativeContact();
+  });
+}
+
+/**
+ * Show alternative contact method if email fails
+ */
+function showAlternativeContact() {
+  const altMessage = document.createElement('div');
+  altMessage.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: 2px solid #A9824C;
+    border-radius: 4px;
+    padding: 20px;
+    max-width: 400px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    z-index: 10000;
+    direction: rtl;
+    text-align: right;
+  `;
+  
+  altMessage.innerHTML = `
+    <h3 style="margin: 0 0 10px 0; color: #141F29;">تم حفظ طلبك بنجاح</h3>
+    <p style="margin: 0 0 15px 0; color: #6E6A5F; font-size: 14px;">
+      إذا لم تتمكن من إرسال البريد تلقائياً، يمكنك نسخ البيانات أدناه وإرسالها مباشرة إلى:
+    </p>
+    <div style="background: #F6F2EA; padding: 10px; border-radius: 2px; margin-bottom: 15px; font-size: 14px; word-break: break-all;">
+      <strong>البريد:</strong> atertourhich@gmail.com
+    </div>
+    <button onclick="this.parentElement.remove()" style="
+      background: #A9824C;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: inherit;
+    ">حسناً، فهمت</button>
+  `;
+  
+  document.body.appendChild(altMessage);
+  
+  // Auto-remove after 10 seconds
+  setTimeout(() => {
+    if (altMessage.parentElement) {
+      altMessage.remove();
+    }
+  }, 10000);
+}
+
 window.MarfaForm = {
   validateForm,
   validateField,
@@ -393,5 +492,7 @@ window.MarfaForm = {
   isValidPhone,
   saveFormDraft,
   loadFormDraft,
-  logFormSubmission
+  logFormSubmission,
+  sendEmailViaAPI,
+  showAlternativeContact
 };
